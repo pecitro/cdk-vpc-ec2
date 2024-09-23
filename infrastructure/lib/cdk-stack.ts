@@ -175,6 +175,12 @@ export class CdkStack extends cdk.Stack {
     // 2:04:32 AM | CREATE_FAILED        | AWS::ECS::Service                         | serviceService
     // Resource timed out waiting for completion (RequestToken: )
 
+    /*
+    service VpcStack-serviceService7DDC3B7C-F6a3465x0zVd was unable to place a task because no container instance met all of its requirements.
+    Reason: No Container Instances were found in your cluster.
+    For more information, see the Troubleshooting section of the Amazon ECS Developer Guide.
+    */
+
     // // セキュリティグループのポート設定
     // alb.connections.allowFromAnyIpv4(ec2.Port.tcp(80), "allow http");
     // alb.connections.allowFromAnyIpv4(ec2.Port.tcp(443), "allow https");
