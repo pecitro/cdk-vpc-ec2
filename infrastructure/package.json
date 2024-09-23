@@ -1,0 +1,9 @@
+{
+  "name": "cdk",
+  "version": "0.1.0",
+  "scripts": {},
+  "dependencies": {
+    "aws-cdk-lib": "2.159.1",
+    "constructs": "10.3.0"
+  }
+}
