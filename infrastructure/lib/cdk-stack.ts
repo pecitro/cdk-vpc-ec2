@@ -171,6 +171,10 @@ export class CdkStack extends cdk.Stack {
     });
     service.attachToApplicationTargetGroup(targetGroup);
 
+    // エラーが出る
+    // 2:04:32 AM | CREATE_FAILED        | AWS::ECS::Service                         | serviceService
+    // Resource timed out waiting for completion (RequestToken: )
+
     // // セキュリティグループのポート設定
     // alb.connections.allowFromAnyIpv4(ec2.Port.tcp(80), "allow http");
     // alb.connections.allowFromAnyIpv4(ec2.Port.tcp(443), "allow https");
