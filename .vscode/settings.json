@@ -4,5 +4,7 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports.biome": "explicit",
     "quickfix.biome": "explicit"
-  }
+  },
+  "terminal.integrated.env.linux": {},
+  "terminal.integrated.env.osx": {}
 }

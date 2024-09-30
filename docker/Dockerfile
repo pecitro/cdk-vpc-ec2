@@ -1,8 +1,18 @@
-FROM node:22-bookworm-slim
+FROM public.ecr.aws/amazonlinux/amazonlinux:latest
 
-WORKDIR /var/www
+# Update installed packages and install Apache
+RUN yum update -y && \
+ yum install -y httpd
 
-RUN npm install express
-COPY ./index.js /var/www/.
+# Write hello world message
+RUN echo 'Hello World!' > /var/www/html/index.html
 
-CMD ["node","index.js"]
+# Configure Apache
+RUN echo 'mkdir -p /var/run/httpd' >> /root/run_apache.sh && \
+ echo 'mkdir -p /var/lock/httpd' >> /root/run_apache.sh && \
+ echo '/usr/sbin/httpd -D FOREGROUND' >> /root/run_apache.sh && \
+ chmod 755 /root/run_apache.sh
+
+EXPOSE 80
+
+CMD /root/run_apache.sh
