@@ -131,6 +131,7 @@ export class CdkStack extends cdk.Stack {
       vpcSubnets: { subnets: [privateSubnet1a] },
       securityGroups: [ecsSg],
     });
+    // https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ecs.EcsTarget.html
 
     // ALB作成
     const alb = new elbv2.ApplicationLoadBalancer(this, "alb", {
